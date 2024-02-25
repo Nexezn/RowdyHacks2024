@@ -71,6 +71,10 @@ public class BabyDino : MonoBehaviour
         //this.transform.GetChild(0).GetComponent<Branch>().Protecc2();
     }
 
+    public void LoseDino(){
+        Destroy(this.gameObject);
+    }
+
     public float GetWalkSpeed() {return this.walkSpeed;}
     public Rigidbody2D GetRigid() {return this.rigid;}
 }

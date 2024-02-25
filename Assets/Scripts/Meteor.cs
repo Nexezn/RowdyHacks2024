@@ -33,25 +33,10 @@ public class Meteor : MonoBehaviour
         
     }
 
-    /*
-    private void OnCollisionEnter2D(Collision2D other){
-        if(other.GetComponent<BabyDino>() != null)
-        {
-            other.GetComponent<BabyDino>().loseDino();
-            Destroy(gameObject);
-        }
-
-        if (other.GetComponent<MomDino>() != null){
-            other.GetComponent<MomDino>().Debuf();
-        }
-
-        else{
-            Destroy(gameObject);
-        }
-    }
-    */
-
      private void OnTriggerEnter2D(Collider2D other){
+        if(other.GetComponent<BabyDino>() != null){
+            other.GetComponent<BabyDino>().LoseDino();
+        }
         Destroy(this.gameObject);
     }
 }

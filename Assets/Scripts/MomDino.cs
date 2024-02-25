@@ -51,6 +51,8 @@ public class MomDino : MonoBehaviour
         }
     }
 
+    public void ImproveSpeed(float speed){}
+
     public float GetWalkSpeed() {return this.walkSpeed;}
     public float GetShootSpeed() {return this.shootSpeed;}
     public Rigidbody2D GetRigid() {return this.rigid;}

@@ -6,6 +6,7 @@ public class CharacterMovement : MonoBehaviour
 {
     [Header("Moveable Character")]
     [SerializeField] MomDino momDino;
+    [SerializeField] List<BabyDinoAnimationStateChanger> animationStateChanger;
     //[SerializeField] BabyDino babyDino;
 
     [Header("Boundery")]
@@ -25,6 +26,22 @@ public class CharacterMovement : MonoBehaviour
         float speed = momDino.GetWalkSpeed();
 
         rigid.velocity = direction * speed;
+
+        if(direction.x != 0) {
+            foreach (BabyDinoAnimationStateChanger state in animationStateChanger)
+            {
+                state.ChangeAnimationState("Walk");
+            }
+        }
+        else
+        {
+             foreach (BabyDinoAnimationStateChanger state in animationStateChanger)
+            {
+                state.ChangeAnimationState("Idle");
+            }
+        }
+
+        
     }
 
     /*

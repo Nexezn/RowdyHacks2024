@@ -6,6 +6,7 @@ public class BabyDino : MonoBehaviour
 {
 
     [SerializeField] CharacterMovement movement;
+    [SerializeField] BabyDinoAnimationStateChanger animationStateChanger;
 
     [Header("Stats")]
 
@@ -52,10 +53,12 @@ public class BabyDino : MonoBehaviour
                     
                     timer+=Time.deltaTime * (1f / this.GetWalkSpeed());
                     this.transform.localPosition = Vector3.Lerp(currentPos,endpoints,timer);
+                    animationStateChanger.ChangeAnimationState("Walk");
                     yield return null;
                 }
 
                 this.transform.localPosition = endpoints;
+                animationStateChanger.ChangeAnimationState("Idle");
                 
             }
 

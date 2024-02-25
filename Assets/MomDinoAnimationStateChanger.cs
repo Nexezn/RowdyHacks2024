@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BabyDinoAnimationStateChanger : MonoBehaviour
+public class MomDinoAnimationStateChanger : MonoBehaviour
 {
     [SerializeField] Animator animator;
     [SerializeField] string currentState = "Idle";

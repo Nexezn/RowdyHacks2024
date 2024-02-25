@@ -1763,6 +1763,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laser: {fileID: 8832473360112971265, guid: 248c94ab75e1275488eef5134bd5edb3, type: 3}
   momDino: {fileID: 1225473190}
+--- !u!114 &1225473198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225473187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b56e228a53685c428ea66e7b404b1b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1225473199}
+  currentState: Idle
+--- !u!95 &1225473199
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225473187}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8bb56731246b72a48bfa5694aa6ae3d7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1231384302
 GameObject:
   m_ObjectHideFlags: 0
@@ -2209,6 +2244,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8928489816478404685, guid: eb67c759f24eebb4996522540ac8ead2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1225473193}
+    - targetCorrespondingSourceObject: {fileID: 8928489816478404685, guid: eb67c759f24eebb4996522540ac8ead2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1225473199}
+    - targetCorrespondingSourceObject: {fileID: 8928489816478404685, guid: eb67c759f24eebb4996522540ac8ead2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1225473198}
   m_SourcePrefab: {fileID: 100100000, guid: eb67c759f24eebb4996522540ac8ead2, type: 3}
 --- !u!1 &1811110052
 GameObject:

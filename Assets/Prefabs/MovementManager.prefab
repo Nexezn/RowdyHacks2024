@@ -44,7 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc5dec07a5086e4fb4943386f90d577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  momDino: {fileID: 0}
+  momDino: {fileID: 4044820470100427494, guid: eb67c759f24eebb4996522540ac8ead2, type: 3}
+  animationStateChanger:
+  - {fileID: 0}
   boundery: 5
   height: -3
   pause: 3

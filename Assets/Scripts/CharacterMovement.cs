@@ -6,7 +6,7 @@ public class CharacterMovement : MonoBehaviour
 {
     [Header("Moveable Character")]
     [SerializeField] MomDino momDino;
-    [SerializeField] List<BabyDinoAnimationStateChanger> animationStateChanger;
+    [SerializeField] MomDinoAnimationStateChanger animationStateChanger;
     //[SerializeField] BabyDino babyDino;
 
     [Header("Boundery")]
@@ -28,17 +28,12 @@ public class CharacterMovement : MonoBehaviour
         rigid.velocity = direction * speed;
 
         if(direction.x != 0) {
-            foreach (BabyDinoAnimationStateChanger state in animationStateChanger)
-            {
-                state.ChangeAnimationState("Walk");
-            }
+
+            animationStateChanger.ChangeAnimationState("Walk");
         }
         else
         {
-             foreach (BabyDinoAnimationStateChanger state in animationStateChanger)
-            {
-                state.ChangeAnimationState("Idle");
-            }
+            animationStateChanger.ChangeAnimationState("Idle");
         }
 
         

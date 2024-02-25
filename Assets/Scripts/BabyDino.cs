@@ -5,7 +5,7 @@ using UnityEngine;
 public class BabyDino : MonoBehaviour
 {
 
-    //[SerializeField] CharacterMovement movement;
+    [SerializeField] CharacterMovement movement;
 
     [Header("Stats")]
 
@@ -13,11 +13,21 @@ public class BabyDino : MonoBehaviour
 
     Rigidbody2D rigid;
 
+    [Header("Boundery")]
+    [SerializeField] float boundery = 5f;
+    [SerializeField] float height = -5f;
+
+    [Header("Movement Time")]
+    [SerializeField] float pause = 2f;
+    [SerializeField] float move = 4f;
+
+    private Vector3 endpoints;
+
     // Start is called before the first frame update
     void Start()
     {
          rigid = GetComponent<Rigidbody2D>();
-        //movement.MoveBaby(this);
+        MoveBaby();
 
     }
 
@@ -27,8 +37,35 @@ public class BabyDino : MonoBehaviour
         
     }
 
+    public void MoveBaby() {
+
+        StartCoroutine(MoveRoutine());
+        IEnumerator MoveRoutine() {
+            while(true){
+                yield return new WaitForSeconds(pause);
+
+                Vector3 currentPos = this.transform.position;
+
+                float timer = 0f;
+                endpoints.Set(Random.Range(-boundery, boundery), height, 0);
+                while(timer < move){
+                    
+                    timer+=Time.deltaTime * (1f / this.GetWalkSpeed());
+                    this.transform.localPosition = Vector3.Lerp(currentPos,endpoints,timer);
+                    yield return null;
+                }
+
+                this.transform.localPosition = endpoints;
+                
+            }
+
+        }
+        
+    }
+
     public void ProtectDino(){
         this.transform.GetChild(0).gameObject.SetActive(true);
+        //this.transform.GetChild(0).GetComponent<Branch>().Protecc2();
     }
 
     public float GetWalkSpeed() {return this.walkSpeed;}

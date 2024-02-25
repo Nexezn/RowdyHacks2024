@@ -8,11 +8,23 @@ public class Branch : MonoBehaviour
     [SerializeField] private float timeToLive = 3.0f;
     void Start()
     {
+        //StartCoroutine(Protecc());
+    }
+
+    void OnEnable(){
         StartCoroutine(Protecc());
     }
 
-    IEnumerator Protecc(){
-        yield return new WaitForSeconds(timeToLive);
+    public void Protecc2(){
+        Debug.Log("Here");
+        new WaitForSeconds(timeToLive);
         gameObject.SetActive(false);
+    }
+
+    IEnumerator Protecc(){
+        while(true){
+           yield return new WaitForSeconds(timeToLive);
+            gameObject.SetActive(false); 
+        }
     }
 }

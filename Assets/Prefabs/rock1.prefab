@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1925790490971328632}
   - component: {fileID: 1805450886417785844}
   - component: {fileID: 7489779050491536379}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: rock1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,6 +103,7 @@ MonoBehaviour:
   rb: {fileID: 1805450886417785844}
   meteorSpeed: 0.5
   rotationSpeed: 1
+  boundary: 8
 --- !u!58 &1925790490971328632
 CircleCollider2D:
   m_ObjectHideFlags: 0

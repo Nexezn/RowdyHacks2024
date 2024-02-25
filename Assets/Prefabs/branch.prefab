@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1213213140026497652}
   - component: {fileID: 8602043590040855402}
   - component: {fileID: 4002837412381362328}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: branch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,3 +151,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2c330fdf5d31b409f31e116101d6d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToLive: 3

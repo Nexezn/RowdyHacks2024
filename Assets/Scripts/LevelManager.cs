@@ -25,14 +25,12 @@ public class LevelManager : MonoBehaviour
             yield return new WaitForSeconds(waitTime);
             if (leftBranch.activeSelf == false){
                 decision = Random.Range(0, max);
-                Debug.Log(decision);
                 if (decision == 0){
                     leftBranch.SetActive(true);
                 }
             }
             if (rightBranch.activeSelf == false){
                 decision = Random.Range(0, max);
-                Debug.Log(decision);
                 if (decision == 0){
                     rightBranch.SetActive(true);
                 }

@@ -10,7 +10,10 @@ public class MomDino : MonoBehaviour
     [SerializeField] float walkSpeed = 5f;
     [SerializeField] float shootSpeed = 3f;
 
-    private BabyDino[] foundBabyObjects;
+    [Header("References")]
+    [SerializeField] List<GameObject> livingHealth;
+
+    private GameObject[] foundBabyObjects;
 
     Rigidbody2D rigid;
 
@@ -18,7 +21,6 @@ public class MomDino : MonoBehaviour
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
-        foundBabyObjects = FindObjectsOfType<BabyDino>();
     }
 
     // Update is called once per frame
@@ -27,26 +29,18 @@ public class MomDino : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D other){
-        Debug.Log("Protecc");
-        if(other.gameObject.GetComponent<Branch>() != null){
-            ProtectDino();
+    private void OnTriggerEnter2D(Collider2D other){
+        if(other.GetComponent<GrabBranch>() != null){
+            ProtectDinoAll();
             other.gameObject.SetActive(false);
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other){
-        if(other.GetComponent<Branch>() != null){
-            ProtectDino();
-        }
-        other.gameObject.SetActive(false);
         
     }
 
-    private void ProtectDino(){
-        for (var i = 0; i < foundBabyObjects.Length; i++){
-            if (foundBabyObjects[i] != null){
-                foundBabyObjects[i].GetComponent<BabyDino>().ProtectDino();
+    private void ProtectDinoAll(){
+        foreach (GameObject i in livingHealth){
+            if (i != null){
+                i.GetComponent<BabyDino>().ProtectDino();
             }
         }
     }

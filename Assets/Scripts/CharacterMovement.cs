@@ -27,6 +27,7 @@ public class CharacterMovement : MonoBehaviour
         rigid.velocity = direction * speed;
     }
 
+    /*
     public void MoveBaby(BabyDino babyDino) {
 
         StartCoroutine(MoveRoutine());
@@ -52,4 +53,5 @@ public class CharacterMovement : MonoBehaviour
         }
         
     }
+    */
 }

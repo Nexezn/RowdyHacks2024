@@ -7,6 +7,7 @@ public class BabyDino : MonoBehaviour
 
     [SerializeField] CharacterMovement movement;
     [SerializeField] BabyDinoAnimationStateChanger animationStateChanger;
+    [SerializeField] LevelManager levelManager;
 
     [Header("Stats")]
 
@@ -72,6 +73,7 @@ public class BabyDino : MonoBehaviour
     }
 
     public void LoseDino(){
+        levelManager.ReduceDino();
         Destroy(this.gameObject);
     }
 

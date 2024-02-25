@@ -188,6 +188,10 @@ PrefabInstance:
       propertyPath: movement
       value: 
       objectReference: {fileID: 1420390310}
+    - target: {fileID: 5116615947204349205, guid: 51e0b595e1a655c44b63c79a135ed7f4, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 1942996684}
     - target: {fileID: 8402976453564456712, guid: 51e0b595e1a655c44b63c79a135ed7f4, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -325,6 +329,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5116615947204349205, guid: 51e0b595e1a655c44b63c79a135ed7f4, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 1942996684}
     - target: {fileID: 8402976453564456712, guid: 51e0b595e1a655c44b63c79a135ed7f4, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -390,6 +398,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5116615947204349205, guid: 51e0b595e1a655c44b63c79a135ed7f4, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 1942996684}
     - target: {fileID: 8402976453564456712, guid: 51e0b595e1a655c44b63c79a135ed7f4, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -1573,6 +1585,10 @@ PrefabInstance:
       propertyPath: movement
       value: 
       objectReference: {fileID: 58657090}
+    - target: {fileID: 5116615947204349205, guid: 51e0b595e1a655c44b63c79a135ed7f4, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 1942996684}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1638,6 +1654,10 @@ PrefabInstance:
       propertyPath: movement
       value: 
       objectReference: {fileID: 3503230910518265277, guid: 7bde0de714d5c21418cee98382dcfc35, type: 3}
+    - target: {fileID: 5116615947204349205, guid: 51e0b595e1a655c44b63c79a135ed7f4, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 1942996684}
     - target: {fileID: 8402976453564456712, guid: 51e0b595e1a655c44b63c79a135ed7f4, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -1941,6 +1961,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5116615947204349205, guid: 51e0b595e1a655c44b63c79a135ed7f4, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 1942996684}
     - target: {fileID: 8402976453564456712, guid: 51e0b595e1a655c44b63c79a135ed7f4, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -2080,6 +2104,10 @@ PrefabInstance:
       propertyPath: movement
       value: 
       objectReference: {fileID: 58657090}
+    - target: {fileID: 5116615947204349205, guid: 51e0b595e1a655c44b63c79a135ed7f4, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 1942996684}
     - target: {fileID: 8402976453564456712, guid: 51e0b595e1a655c44b63c79a135ed7f4, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -2201,6 +2229,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5116615947204349205, guid: 51e0b595e1a655c44b63c79a135ed7f4, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 1942996684}
     - target: {fileID: 8402976453564456712, guid: 51e0b595e1a655c44b63c79a135ed7f4, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -2425,7 +2457,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 8
+  m_text: 9
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2651,8 +2683,8 @@ Canvas:
   m_GameObject: {fileID: 1464064857}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -2948,10 +2980,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5efd89c76cd1a4ea1704d298eb08a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dinoCounterText: {fileID: 1355711106}
   leftBranch: {fileID: 832632532}
   rightBranch: {fileID: 6382427087605597251}
-  max: 100
+  max: 50
   waitTime: 3
+  numDinos: 8
 --- !u!4 &1942996685
 Transform:
   m_ObjectHideFlags: 0
@@ -3267,6 +3301,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5116615947204349205, guid: 51e0b595e1a655c44b63c79a135ed7f4, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 1942996684}
     - target: {fileID: 8402976453564456712, guid: 51e0b595e1a655c44b63c79a135ed7f4, type: 3}
       propertyPath: m_IsTrigger
       value: 1

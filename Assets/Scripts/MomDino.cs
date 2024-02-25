@@ -10,18 +10,45 @@ public class MomDino : MonoBehaviour
     [SerializeField] float walkSpeed = 5f;
     [SerializeField] float shootSpeed = 3f;
 
+    private BabyDino[] foundBabyObjects;
+
     Rigidbody2D rigid;
 
     // Start is called before the first frame update
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
+        foundBabyObjects = FindObjectsOfType<BabyDino>();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private void OnCollisionEnter2D(Collision2D other){
+        Debug.Log("Protecc");
+        if(other.gameObject.GetComponent<Branch>() != null){
+            ProtectDino();
+            other.gameObject.SetActive(false);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other){
+        if(other.GetComponent<Branch>() != null){
+            ProtectDino();
+        }
+        other.gameObject.SetActive(false);
+        
+    }
+
+    private void ProtectDino(){
+        for (var i = 0; i < foundBabyObjects.Length; i++){
+            if (foundBabyObjects[i] != null){
+                foundBabyObjects[i].GetComponent<BabyDino>().ProtectDino();
+            }
+        }
     }
 
     public float GetWalkSpeed() {return this.walkSpeed;}

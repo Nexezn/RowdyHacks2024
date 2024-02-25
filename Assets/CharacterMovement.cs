@@ -21,6 +21,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void MoveMom(Vector3 direction) {
         Rigidbody2D rigid = momDino.GetRigid();
+
         float speed = momDino.GetWalkSpeed();
 
         rigid.velocity = direction * speed;

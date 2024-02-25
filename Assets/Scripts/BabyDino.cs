@@ -5,7 +5,7 @@ using UnityEngine;
 public class BabyDino : MonoBehaviour
 {
 
-    [SerializeField] CharacterMovement movement;
+    //[SerializeField] CharacterMovement movement;
 
     [Header("Stats")]
 
@@ -17,13 +17,18 @@ public class BabyDino : MonoBehaviour
     void Start()
     {
          rigid = GetComponent<Rigidbody2D>();
-        movement.MoveBaby(this);
+        //movement.MoveBaby(this);
+
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void ProtectDino(){
+        this.transform.GetChild(0).gameObject.SetActive(true);
     }
 
     public float GetWalkSpeed() {return this.walkSpeed;}

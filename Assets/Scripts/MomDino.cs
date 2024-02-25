@@ -10,6 +10,8 @@ public class MomDino : MonoBehaviour
     [SerializeField] float walkSpeed = 5f;
     [SerializeField] float shootSpeed = 3f;
 
+    public float modSpeed;
+
     [Header("References")]
     [SerializeField] List<GameObject> livingHealth;
 
@@ -20,6 +22,7 @@ public class MomDino : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        modSpeed = walkSpeed;
         rigid = GetComponent<Rigidbody2D>();
     }
 
@@ -34,6 +37,11 @@ public class MomDino : MonoBehaviour
             ProtectDinoAll();
             other.gameObject.SetActive(false);
         }
+        if(other.GetComponent<Meteor>() != null){
+            Debug.Log("Changing speed");
+            StartCoroutine(ChangeSpeed());
+            Destroy(other.gameObject);
+        }
         
     }
 
@@ -45,9 +53,19 @@ public class MomDino : MonoBehaviour
         }
     }
 
+    IEnumerator ChangeSpeed(){
+        UpdateSpeed(walkSpeed/2);
+        yield return new WaitForSeconds(3.0f);
+        UpdateSpeed(walkSpeed);
+    }
+
+    public void UpdateSpeed(float speed){
+        modSpeed = speed;
+    }
+
     public void ImproveSpeed(float speed){}
 
-    public float GetWalkSpeed() {return this.walkSpeed;}
+    public float GetWalkSpeed() {return modSpeed;}
     public float GetShootSpeed() {return this.shootSpeed;}
     public Rigidbody2D GetRigid() {return this.rigid;}
 
